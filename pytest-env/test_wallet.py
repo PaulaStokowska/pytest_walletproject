@@ -23,6 +23,7 @@ def test_add_cash(wallet):
     wallet.add_cash(300)
     assert wallet.balance == 700
 
+@pytest.mark.skipif(wallet.balance == 0)
 def test_spend_cash(wallet):
     wallet.spend_cash(200)
     assert wallet.balance == 200
